@@ -1,21 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:google_fonts/google_fonts.dart';
-import 'package:meals/categories.dart';
+import 'package:meals/screens/categories.dart';
 
 final theme = ThemeData(
-  colorScheme: const ColorScheme(
-    brightness: Brightness.light,
-    primary: Colors.black,
-    onPrimary: Colors.white,
-    secondary: Colors.white,
-    onSecondary: Colors.black,
-    error: Colors.red,
-    onError: Colors.white,
-    background: Colors.white,
-    onBackground: Colors.black,
-    surface: Colors.white,
-    onSurface: Colors.black,
+  colorScheme: ColorScheme.fromSeed(
+    brightness: Brightness.dark,
+    seedColor: const Color.fromARGB(255, 131, 57, 0),
   ),
   textTheme: GoogleFonts.latoTextTheme(),
 );
