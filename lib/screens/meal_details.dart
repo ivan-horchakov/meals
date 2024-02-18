@@ -22,8 +22,8 @@ class MealDetailsScreen extends StatelessWidget {
             onPressed: () {
               onToggleFavorite(meal);
             },
-            icon: Icon(Icons.star),
-          )
+            icon: const Icon(Icons.star),
+          ),
         ],
       ),
       body: SingleChildScrollView(
@@ -48,7 +48,7 @@ class MealDetailsScreen extends StatelessWidget {
               Text(
                 ingredient,
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    color: Theme.of(context).colorScheme.onBackground),
+                    color: Theme.of(context).colorScheme.onBackground,),
               ),
             const SizedBox(height: 12),
             Text(
@@ -67,7 +67,7 @@ class MealDetailsScreen extends StatelessWidget {
                   step,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                      color: Theme.of(context).colorScheme.onBackground),
+                      color: Theme.of(context).colorScheme.onBackground,),
                 ),
               ),
           ],

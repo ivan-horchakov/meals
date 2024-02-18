@@ -4,11 +4,12 @@ import 'package:meals/screens/meal_details.dart';
 import 'package:meals/widgets/meal_item.dart';
 
 class MealsScreen extends StatelessWidget {
-  const MealsScreen(
-      {super.key,
-      this.title,
-      required this.meals,
-      required this.onToggleFavorite});
+  const MealsScreen({
+    super.key,
+    this.title,
+    required this.meals,
+    required this.onToggleFavorite,
+  });
 
   final String? title;
   final List<Meal> meals;
@@ -32,7 +33,7 @@ class MealsScreen extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Text(
-            'Uh oh ... nothing here!',
+            'Nothing to see here...',
             style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
@@ -41,7 +42,7 @@ class MealsScreen extends StatelessWidget {
             height: 18,
           ),
           Text(
-            'Try selecting a different category!',
+            'Try adding some favorites or remove filters!',
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
