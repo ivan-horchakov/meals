@@ -15,24 +15,26 @@ class MealDetailsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final favoriteMeals = ref.watch(favoriteMealsProvider);
     final isFavorite = favoriteMeals.contains(meal);
+    const double textScaler = 1.0;
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(meal.title),
+        title: Text(
+          meal.title,
+          textScaler: const TextScaler.linear(textScaler),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
             onPressed: () {
-              final wasAdded = ref
-                  .read(favoriteMealsProvider.notifier)
-                  .toggleMealFavoriteStatus(meal);
+              final wasAdded = ref.read(favoriteMealsProvider.notifier).toggleMealFavoriteStatus(meal);
               ScaffoldMessenger.of(context).clearSnackBars();
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
                   content: Text(
-                    wasAdded
-                        ? 'Added to your favorites'
-                        : 'Removed from your favorites',
+                    wasAdded ? 'Added to your favorites' : 'Removed from your favorites',
+                    style: const TextStyle(fontSize: 15),
+                    textScaler: const TextScaler.linear(textScaler),
                   ),
                   duration: const Duration(seconds: 3),
                 ),
@@ -76,6 +78,7 @@ class MealDetailsScreen extends ConsumerWidget {
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.bold,
                   ),
+              textScaler: const TextScaler.linear(textScaler),
             ),
             const SizedBox(height: 12),
             for (final ingredient in meal.ingredients)
@@ -84,6 +87,7 @@ class MealDetailsScreen extends ConsumerWidget {
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                       color: Theme.of(context).colorScheme.onBackground,
                     ),
+                textScaler: const TextScaler.linear(textScaler),
               ),
             const SizedBox(height: 12),
             Text(
@@ -92,18 +96,19 @@ class MealDetailsScreen extends ConsumerWidget {
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.bold,
                   ),
+              textScaler: const TextScaler.linear(textScaler),
             ),
             const SizedBox(height: 12),
             for (final step in meal.steps)
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                 child: Text(
                   step,
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                         color: Theme.of(context).colorScheme.onBackground,
                       ),
+                  textScaler: const TextScaler.linear(textScaler),
                 ),
               ),
           ],

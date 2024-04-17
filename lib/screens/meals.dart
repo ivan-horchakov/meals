@@ -25,6 +25,8 @@ class MealsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double textScaler = 0.9;
+
     Widget content = Center(
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -34,15 +36,15 @@ class MealsScreen extends StatelessWidget {
             style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
+            textScaler: const TextScaler.linear(textScaler),
           ),
-          const SizedBox(
-            height: 18,
-          ),
+          const SizedBox(height: 18),
           Text(
             'Try adding some favorites or remove filters!',
             style: Theme.of(context).textTheme.bodyLarge!.copyWith(
                   color: Theme.of(context).colorScheme.onBackground,
                 ),
+            textScaler: const TextScaler.linear(textScaler),
           ),
         ],
       ),
@@ -66,7 +68,10 @@ class MealsScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(title!),
+        title: Text(
+          title!,
+          textScaler: const TextScaler.linear(textScaler),
+        ),
         centerTitle: true,
       ),
       body: content,

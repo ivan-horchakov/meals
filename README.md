@@ -1,8 +1,10 @@
-# Meals Flutter App
+# Flutter Meals App
 
-This app was built during passing the [Sections 8](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/learn/lecture/37143946#overview), [9](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/learn/lecture/37144760#overview) & [10](https://www.udemy.com/course/learn-flutter-dart-to-build-ios-android-apps/learn/lecture/37145084#overview) of the "Flutter & Dart - The Complete Guide [2024 Edition.]" course.
+Flutter Meals App (categories, recipes, filters, favorites) with Riverpod SM. Optimized for Android & iOS mobile devices.
 
-A few useful resources:
+This app was built while passing the "Section 8", "Section 9" & "Section 10" of the "Flutter & Dart - The Complete Guide [2024 Edition.]" course on Udemy.
+
+A few useful resources for starters:
 
 - [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
 - [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)

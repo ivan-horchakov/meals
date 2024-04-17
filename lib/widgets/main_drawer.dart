@@ -7,6 +7,8 @@ class MainDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    const double textScaler = 1.0;
+
     return Drawer(
       child: Column(
         children: [
@@ -16,10 +18,7 @@ class MainDrawer extends StatelessWidget {
               gradient: LinearGradient(
                 colors: [
                   Theme.of(context).colorScheme.primaryContainer,
-                  Theme.of(context)
-                      .colorScheme
-                      .primaryContainer
-                      .withOpacity(0.9),
+                  Theme.of(context).colorScheme.primaryContainer.withOpacity(0.9),
                 ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
@@ -32,14 +31,13 @@ class MainDrawer extends StatelessWidget {
                   size: 49,
                   color: Theme.of(context).colorScheme.primary,
                 ),
-                const SizedBox(
-                  width: 18,
-                ),
+                const SizedBox(width: 18),
                 Text(
                   'Cooking Up!',
                   style: Theme.of(context).textTheme.titleLarge!.copyWith(
                         color: Theme.of(context).colorScheme.primary,
                       ),
+                  textScaler: const TextScaler.linear(textScaler),
                 ),
               ],
             ),
@@ -56,6 +54,7 @@ class MainDrawer extends StatelessWidget {
                     color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 24,
                   ),
+              textScaler: const TextScaler.linear(textScaler),
             ),
             onTap: () {
               onSelectScreen('meals');
@@ -73,6 +72,7 @@ class MainDrawer extends StatelessWidget {
                     color: Theme.of(context).colorScheme.onBackground,
                     fontSize: 24,
                   ),
+              textScaler: const TextScaler.linear(textScaler),
             ),
             onTap: () {
               onSelectScreen('filters');

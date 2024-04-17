@@ -46,6 +46,7 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
   @override
   Widget build(BuildContext context) {
     final availableMeals = ref.watch(filteredMealsProvider);
+    const double textScaler = 1.0;
 
     Widget activePage = CategoriesScreen(
       availableMeals: availableMeals,
@@ -62,7 +63,10 @@ class _TabsScreenState extends ConsumerState<TabsScreen> {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(activePageTitle),
+        title: Text(
+          activePageTitle,
+          textScaler: const TextScaler.linear(textScaler),
+        ),
       ),
       drawer: MainDrawer(onSelectScreen: _setScreen),
       body: activePage,

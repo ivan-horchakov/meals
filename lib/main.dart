@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meals/screens/tabs.dart';
 
@@ -15,13 +14,13 @@ final theme = ThemeData(
 void main() {
   runApp(
     const ProviderScope(
-      child: App(),
+      child: MealsApp(),
     ),
   );
 }
 
-class App extends StatelessWidget {
-  const App({super.key});
+class MealsApp extends StatelessWidget {
+  const MealsApp({super.key});
 
   @override
   Widget build(BuildContext context) {
